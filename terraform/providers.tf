@@ -6,7 +6,7 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "~> 4.0"
     }
-  
+  } 
   backend "azurerm" {
     resource_group_name  = "rg-github-actions-demo"
     storage_account_name = "stiacdemo001"
