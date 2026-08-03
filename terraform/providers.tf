@@ -7,8 +7,7 @@ terraform {
       version = "~> 4.0"
     }
   
-
-backend "azurerm" {
+  backend "azurerm" {
     resource_group_name  = "rg-github-actions-demo"
     storage_account_name = "stiacdemo001"
     container_name       = "tfstate"
@@ -16,9 +15,9 @@ backend "azurerm" {
   }
 }
 
-provider "azurerm" {
+  provider "azurerm" {
   features {}
 
   subscription_id = var.subscription_id
 }
-}
+
