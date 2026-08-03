@@ -15,5 +15,7 @@ resource "azurerm_storage_account" "storage" {
   tags = {
     Project = "Azure Terraform GitHub Actions"
     Owner   = "Tolu"
+    Environment = "Dev"
+    ManagedBy = "Terraform"
   }
 }
