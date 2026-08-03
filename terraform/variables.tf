@@ -14,3 +14,20 @@ variable "resource_group_name" {
   type        = string
   default     = "rg-github-actions-demo"
 }
+variable "storage_account_name" {
+  description = "Azure Storage Account Name"
+  type        = string
+  default     = "sttolugithubdemo001"
+}
+
+variable "account_tier" {
+  description = "Storage performance tier"
+  type        = string
+  default     = "Standard"
+}
+
+variable "account_replication_type" {
+  description = "Replication type"
+  type        = string
+  default     = "LRS"
+}
