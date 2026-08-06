@@ -4,9 +4,9 @@
 
 This project demonstrates a production-style Infrastructure as Code (IaC) deployment pipeline using **Terraform**, **GitHub Actions**, and **Microsoft Azure**.
 
-The solution provisions Azure infrastructure using reusable Terraform code and automates infrastructure validation, planning, and deployment through GitHub Actions. Infrastructure state is securely stored in Azure Blob Storage using a remote backend to support collaboration, state locking, and disaster recovery.
+The solution provisions Azure infrastructure using reusable Terraform code and automates infrastructure validation, planning, and deployment through GitHub Actions. The Infrastructure state is securely stored in Azure Blob Storage using a remote backend to support collaboration, state locking, and disaster recovery.
 
-Rather than deploying infrastructure automatically after every code change, the pipeline is designed using a **dual-stage deployment model**:
+Rather than deploying the infrastructure automatically after every code change, the pipeline is designed using a **two-stage deployment workflow**:
 
 - **Terraform Plan** - Generates and reviews the execution plan.
 - **Terraform Apply** - Manually triggered after reviewing the plan, providing a controlled deployment process.
@@ -19,7 +19,7 @@ This approach mirrors modern CI/CD practices commonly used within enterprise clo
 
 ```text
                         +----------------------+
-                        |     Developer        |
+                        |     Engineer          |
                         +----------+-----------+
                                    |
                             Git Commit / Push
@@ -33,10 +33,10 @@ This approach mirrors modern CI/CD practices commonly used within enterprise clo
                                    |
                                    v
               +--------------------------------------+
-              | GitHub Actions - Terraform Plan      |
+              | GitHub Actions - Terraform Plan       |
               +--------------------------------------+
                        |
-                       | Checkout Repository
+                       | Checkout Repo
                        | Terraform Init
                        | Terraform Validate
                        | Terraform Plan
@@ -48,10 +48,10 @@ This approach mirrors modern CI/CD practices commonly used within enterprise clo
                        |
                        v
               +--------------------------------------+
-              | GitHub Actions - Terraform Apply     |
+              | GitHub Actions - Terraform Apply      |
               +--------------------------------------+
                        |
-                       | Checkout Repository
+                       | Checkout Repo
                        | Terraform Init
                        | Terraform Apply
                        |
@@ -89,7 +89,7 @@ This approach mirrors modern CI/CD practices commonly used within enterprise clo
 
 - Infrastructure as Code (IaC)
 - GitHub Actions CI/CD
-- Dual-stage deployment workflow
+- Two-stage deployment workflow
 - Manual deployment approval
 - Remote Terraform Backend
 - Azure Blob Storage State Management
@@ -127,7 +127,6 @@ azure-terraform-github-actions/
 ├── screenshots/
 │   ├── github-plan-success.png
 │   ├── github-apply-success.png
-│   ├── azure-resource-group.png
 │   ├── azure-storage-account.png
 │   ├── azure-blob-state.png
 │   └── repository-structure.png
@@ -189,7 +188,7 @@ This project follows several cloud security best practices.
 
 # Remote Terraform State
 
-Terraform state is stored remotely in Azure Blob Storage instead of locally on an engineer's workstation.
+Terraform state is stored remotely in Azure Blob Storage instead of storing locally on a workstation.
 
 Benefits include:
 
@@ -213,12 +212,6 @@ The current Terraform configuration provisions:
 ---
 
 # Screenshots
-
-## Repository Structure
-
-![Repository Structure](screenshots/repository-structure.png)
-
----
 
 ## Terraform Plan Workflow
 
