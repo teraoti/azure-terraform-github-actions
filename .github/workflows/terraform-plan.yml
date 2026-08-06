@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'README.md'
+      - 'ReadMe.Md'
+      - 'ReadMe.md'
+      - '**.md'              # Ignores any markdown files anywhere in the repo
+      - 'screenshots/**'     # Ignores your screenshots folder completely
+
   workflow_dispatch: # Allows manual trigger for dry-runs
 
 jobs:
