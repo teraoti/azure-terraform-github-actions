@@ -8,8 +8,8 @@ The solution provisions Azure infrastructure using reusable Terraform code and a
 
 Rather than deploying infrastructure automatically after every code change, the pipeline is designed using a **dual-stage deployment model**:
 
-- **Terraform Plan** – Generates and reviews the execution plan.
-- **Terraform Apply** – Manually triggered after reviewing the plan, providing a controlled deployment process.
+- **Terraform Plan** - Generates and reviews the execution plan.
+- **Terraform Apply** - Manually triggered after reviewing the plan, providing a controlled deployment process.
 
 This approach mirrors modern CI/CD practices commonly used within enterprise cloud environments.
 
@@ -141,7 +141,7 @@ azure-terraform-github-actions/
 
 # Deployment Workflow
 
-## Stage 1 – Terraform Plan
+## Stage 1: Terraform Plan
 
 The planning workflow performs the following tasks:
 
@@ -158,7 +158,7 @@ The generated execution plan is reviewed before any deployment proceeds.
 
 ---
 
-## Stage 2 – Terraform Apply
+## Stage 2: Terraform Apply
 
 After reviewing the execution plan, the deployment workflow is manually triggered.
 
@@ -197,7 +197,7 @@ Benefits include:
 - Team collaboration
 - State locking
 - Disaster recovery
-- Reduced risk of state corruption
+- Redued risk of state corruption
 
 ---
 
@@ -229,12 +229,6 @@ The current Terraform configuration provisions:
 ## Terraform Apply Workflow
 
 ![Terraform Apply](screenshots/github-apply-success.png)
-
----
-
-## Azure Resource Group
-
-![Azure Resource Group](screenshots/azure-resource-group.png)
 
 ---
 
@@ -300,7 +294,7 @@ Potential future improvements include:
 
 # Author
 
-**Tolulope Dada**
+**Tolu Dada**
 
 Cloud Infrastructure | Platform Engineering | Azure | Terraform | GitHub Actions | VMware | Windows Server | Linux
 
