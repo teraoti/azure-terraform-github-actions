@@ -18,6 +18,7 @@ resource "azurerm_storage_account" "storage" {
     Environment = "Dev"
     ManagedBy = "Terraform"   
   }
+}
 
 # Create a Virtual Network
 resource "azurerm_virtual_network" "vnet" {
